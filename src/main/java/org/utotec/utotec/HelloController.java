@@ -9,21 +9,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class HelloController implements Initializable {
@@ -92,6 +89,7 @@ public class HelloController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         instance = this;
+        pnKasir.setStyle("-fx-background-color: #4cbc27;");
         RefreshData();
 
         pnExit.setOnMouseClicked(mouseEvent -> Exit(mouseEvent));
@@ -167,6 +165,8 @@ public class HelloController implements Initializable {
     }
 
     private void openKasir() {
+        pnGudang.setStyle("-fx-background-color: transparent;");
+        pnKasir.setStyle("-fx-background-color: #4cbc27;");
         if (!VboxMainContainer.getChildren().equals(HboxKasir)){
             VboxMainContainer.getChildren().clear();
             VboxMainContainer.getChildren().add(HboxKasir);
@@ -174,6 +174,8 @@ public class HelloController implements Initializable {
     }
 
     private void openGudang(){
+        pnKasir.setStyle("-fx-background-color: transparent;");
+        pnGudang.setStyle("-fx-background-color: #4cbc27;");
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("gudang.fxml"));
         try {
@@ -191,7 +193,11 @@ public class HelloController implements Initializable {
         String cari = txtSearchData.getText();
         try {
             String extraQuery = checkBoxFilter();
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM barang WHERE nama LIKE ? AND (" + extraQuery + ")");
+            String query = "SELECT * FROM barang WHERE nama LIKE ?";
+            if (!extraQuery.isEmpty()){
+                query = "SELECT * FROM barang WHERE nama LIKE ? AND (" + extraQuery + ")";
+            }
+            PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, "%" + cari + "%");
             System.out.println(statement);
             ResultSet resultSet = statement.executeQuery();

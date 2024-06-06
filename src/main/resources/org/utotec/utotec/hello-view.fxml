@@ -14,6 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="947.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.utotec.utotec.HelloController">
@@ -65,8 +66,37 @@
                <children>
                   <VBox prefHeight="584.0" prefWidth="1001.0">
                      <children>
-                        <HBox alignment="CENTER" prefHeight="54.0" prefWidth="546.0" spacing="20.0" style="-fx-background-color: #3572EF;">
+                        <HBox alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="546.0" spacing="20.0" style="-fx-background-color: #3572EF;">
                            <children>
+                              <HBox fillHeight="false" prefHeight="150.0" prefWidth="174.0">
+                                 <children>
+                                    <ImageView fitHeight="51.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../img/backspaceaqua.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Label text="Backspace" textFill="#ff8f00">
+                                             <font>
+                                                <Font name="Poppins Medium" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Computer" textFill="#b6fffa">
+                                             <font>
+                                                <Font name="Poppins Medium" size="13.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </HBox>
                               <TextField fx:id="txtSearchData" prefHeight="26.0" prefWidth="394.0" promptText="Search" styleClass="login" stylesheets="@../../../css/style.css">
                                  <font>
                                     <Font name="Fira Code SemiBold" size="12.0" />
@@ -79,13 +109,34 @@
                         </HBox>
                         <Pane prefHeight="56.0" prefWidth="546.0">
                            <children>
-                              <CheckBox fx:id="chkCPU" layoutX="115.0" layoutY="6.0" mnemonicParsing="false" text="CPU" />
-                              <CheckBox fx:id="chkGPU" layoutX="115.0" layoutY="34.0" mnemonicParsing="false" text="GPU" />
-                              <CheckBox fx:id="chkRAM" layoutX="242.0" layoutY="6.0" mnemonicParsing="false" text="RAM" />
-                              <CheckBox fx:id="chkMOBO" layoutX="242.0" layoutY="34.0" mnemonicParsing="false" text="Motherboard" />
-                              <CheckBox fx:id="chkPSU" layoutX="374.0" layoutY="6.0" mnemonicParsing="false" text="PSU" />
-                              <CheckBox fx:id="chkCASE" layoutX="374.0" layoutY="34.0" mnemonicParsing="false" text="Casing" />
+                              <CheckBox fx:id="chkCPU" layoutX="115.0" layoutY="6.0" mnemonicParsing="false" text="CPU">
+                                 <font>
+                                    <Font name="Poppins Medium" size="13.0" />
+                                 </font></CheckBox>
+                              <CheckBox fx:id="chkGPU" layoutX="115.0" layoutY="34.0" mnemonicParsing="false" text="GPU">
+                                 <font>
+                                    <Font name="Poppins Medium" size="13.0" />
+                                 </font></CheckBox>
+                              <CheckBox fx:id="chkRAM" layoutX="242.0" layoutY="6.0" mnemonicParsing="false" text="RAM">
+                                 <font>
+                                    <Font name="Poppins Medium" size="13.0" />
+                                 </font></CheckBox>
+                              <CheckBox fx:id="chkMOBO" layoutX="242.0" layoutY="34.0" mnemonicParsing="false" text="Motherboard">
+                                 <font>
+                                    <Font name="Poppins Medium" size="13.0" />
+                                 </font></CheckBox>
+                              <CheckBox fx:id="chkPSU" layoutX="374.0" layoutY="6.0" mnemonicParsing="false" text="PSU">
+                                 <font>
+                                    <Font name="Poppins Medium" size="13.0" />
+                                 </font></CheckBox>
+                              <CheckBox fx:id="chkCASE" layoutX="374.0" layoutY="34.0" mnemonicParsing="false" text="Casing">
+                                 <font>
+                                    <Font name="Poppins Medium" size="13.0" />
+                                 </font></CheckBox>
                            </children>
+                           <padding>
+                              <Insets bottom="15.0" top="50.0" />
+                           </padding>
                         </Pane>
                         <ScrollPane prefHeight="499.0" prefWidth="550.0" VBox.vgrow="ALWAYS">
                            <content>
@@ -100,7 +151,18 @@
                   </VBox>
                   <VBox alignment="TOP_CENTER" prefHeight="594.0" prefWidth="794.0">
                      <children>
-                        <HBox prefHeight="65.0" prefWidth="342.0" style="-fx-background-color: #3572EF;" />
+                        <HBox alignment="CENTER_RIGHT" prefHeight="65.0" prefWidth="342.0" spacing="5.0" style="-fx-background-color: #3572EF;">
+                           <children>
+                              <Label text="Keranjang" textFill="WHITE">
+                                 <font>
+                                    <Font name="Poppins Medium" size="22.0" />
+                                 </font>
+                              </Label>
+                              <SVGPath content="M24 3l-.743 2h-1.929l-3.474 12h-13.239l-4.615-11h16.812l-.564 2h-13.24l2.937 7h10.428l3.432-12h4.195zm-15.5 15c-.828 0-1.5.672-1.5 1.5 0 .829.672 1.5 1.5 1.5s1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm6.9-7-1.9 7c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5z" fill="WHITE" />
+                           </children>
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding></HBox>
                         <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="420.0" prefWidth="342.0">
                            <content>
                               <VBox fx:id="barangContainer" prefHeight="200.0" prefWidth="100.0" />
@@ -110,14 +172,14 @@
                            <children>
                               <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="344.0">
                                  <children>
-                                    <Label text="TOTAL : Rp.">
+                                    <Label text="Total : Rp.">
                                        <font>
-                                          <Font name="Fira Code SemiBold" size="18.0" />
+                                          <Font name="Poppins Medium" size="18.0" />
                                        </font>
                                     </Label>
                                     <Label fx:id="txtTotal" layoutX="10.0" layoutY="27.0" text="00000000">
                                        <font>
-                                          <Font name="Fira Code SemiBold" size="18.0" />
+                                          <Font name="Poppins Medium" size="18.0" />
                                        </font>
                                     </Label>
                                  </children>
@@ -132,14 +194,14 @@
                               </TextField>
                               <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="344.0">
                                  <children>
-                                    <Label text="KEMBALIAN : Rp.">
+                                    <Label text="Kembalian : Rp.">
                                        <font>
-                                          <Font name="Fira Code Medium" size="12.0" />
+                                          <Font name="Poppins Medium" size="18.0" />
                                        </font>
                                     </Label>
                                     <Label fx:id="txtKembali" layoutX="15.0" layoutY="17.0" text="0000000000">
                                        <font>
-                                          <Font name="Fira Code Medium" size="12.0" />
+                                          <Font name="Poppins Medium" size="18.0" />
                                        </font>
                                     </Label>
                                  </children>
@@ -149,9 +211,9 @@
                               </HBox>
                               <HBox alignment="CENTER" prefHeight="61.0" prefWidth="342.0">
                                  <children>
-                                    <Button fx:id="btnBayar" mnemonicParsing="false" prefHeight="20.0" prefWidth="214.0" style="-fx-background-color: #3ABEF9; -fx-background-radius: 20; -fx-background-radius: 20;" text="CETAK">
+                                    <Button fx:id="btnBayar" mnemonicParsing="false" prefHeight="20.0" prefWidth="208.0" style="-fx-background-color: #3ABEF9; -fx-background-radius: 20; -fx-background-radius: 20;" text="CETAK">
                                        <font>
-                                          <Font name="Fira Code SemiBold" size="22.0" />
+                                          <Font name="Poppins Medium" size="19.0" />
                                        </font>
                                     </Button>
                                  </children>
