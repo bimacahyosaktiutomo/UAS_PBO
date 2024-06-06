@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="947.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.utotec.utotec.HelloController">
+   <children>
+      <VBox prefHeight="583.0" prefWidth="54.0" style="-fx-background-color: #050C9C;">
+         <children>
+            <Pane fx:id="pnKasir" prefHeight="50.0" prefWidth="53.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="46.0" layoutX="10.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../icon/icons8-cart-48.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+            <Pane fx:id="pnGudang" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="44.0" layoutX="10.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../icon/icons8-warehouse-48.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+            <Pane layoutX="10.0" layoutY="60.0" prefHeight="426.0" prefWidth="53.0" />
+            <Pane fx:id="pnExit" layoutX="10.0" layoutY="111.0" prefHeight="50.0" prefWidth="50.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="10.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../icon/icons8-log-out-50.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+         </children>
+      </VBox>
+      <VBox fx:id="VboxMainContainer" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="894.0" style="-fx-background-color: white;">
+         <children>
+            <HBox fx:id="HboxKasir" prefHeight="603.0" prefWidth="894.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox prefHeight="584.0" prefWidth="1001.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="54.0" prefWidth="546.0" spacing="20.0" style="-fx-background-color: #3572EF;">
+                           <children>
+                              <TextField fx:id="txtSearchData" prefHeight="26.0" prefWidth="394.0" promptText="Search" styleClass="login" stylesheets="@../../../css/style.css">
+                                 <font>
+                                    <Font name="Fira Code SemiBold" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <padding>
+                              <Insets right="20.0" />
+                           </padding>
+                        </HBox>
+                        <Pane prefHeight="56.0" prefWidth="546.0">
+                           <children>
+                              <CheckBox fx:id="chkCPU" layoutX="115.0" layoutY="6.0" mnemonicParsing="false" text="CPU" />
+                              <CheckBox fx:id="chkGPU" layoutX="115.0" layoutY="34.0" mnemonicParsing="false" text="GPU" />
+                              <CheckBox fx:id="chkRAM" layoutX="242.0" layoutY="6.0" mnemonicParsing="false" text="RAM" />
+                              <CheckBox fx:id="chkMOBO" layoutX="242.0" layoutY="34.0" mnemonicParsing="false" text="Motherboard" />
+                              <CheckBox fx:id="chkPSU" layoutX="374.0" layoutY="6.0" mnemonicParsing="false" text="PSU" />
+                              <CheckBox fx:id="chkCASE" layoutX="374.0" layoutY="34.0" mnemonicParsing="false" text="Casing" />
+                           </children>
+                        </Pane>
+                        <ScrollPane prefHeight="499.0" prefWidth="550.0" VBox.vgrow="ALWAYS">
+                           <content>
+                              <GridPane fx:id="GPbarang" prefHeight="0.0" prefWidth="0.0">
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="594.0" prefWidth="794.0">
+                     <children>
+                        <HBox prefHeight="65.0" prefWidth="342.0" style="-fx-background-color: #3572EF;" />
+                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="420.0" prefWidth="342.0">
+                           <content>
+                              <VBox fx:id="barangContainer" prefHeight="200.0" prefWidth="100.0" />
+                           </content>
+                        </ScrollPane>
+                        <VBox prefHeight="156.0" prefWidth="344.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="344.0">
+                                 <children>
+                                    <Label text="TOTAL : Rp.">
+                                       <font>
+                                          <Font name="Fira Code SemiBold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="txtTotal" layoutX="10.0" layoutY="27.0" text="00000000">
+                                       <font>
+                                          <Font name="Fira Code SemiBold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </HBox>
+                              <TextField fx:id="txtPembayaran" promptText="Bayar">
+                                 <font>
+                                    <Font name="Fira Code SemiBold" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="344.0">
+                                 <children>
+                                    <Label text="KEMBALIAN : Rp.">
+                                       <font>
+                                          <Font name="Fira Code Medium" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="txtKembali" layoutX="15.0" layoutY="17.0" text="0000000000">
+                                       <font>
+                                          <Font name="Fira Code Medium" size="12.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="61.0" prefWidth="342.0">
+                                 <children>
+                                    <Button fx:id="btnBayar" mnemonicParsing="false" prefHeight="20.0" prefWidth="214.0" style="-fx-background-color: #3ABEF9; -fx-background-radius: 20; -fx-background-radius: 20;" text="CETAK">
+                                       <font>
+                                          <Font name="Fira Code SemiBold" size="22.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>

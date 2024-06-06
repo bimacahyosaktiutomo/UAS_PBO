@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="782.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.utotec.utotec.FormEditController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+         <children>
+            <ImageView fx:id="imgPP" fitHeight="188.0" fitWidth="251.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/laptopku.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnUbahGambar" mnemonicParsing="false" prefHeight="32.0" prefWidth="91.0" styleClass="login-btn" stylesheets="@../../../css/style.css" text="Ubah" textFill="WHITE">
+               <font>
+                  <Font name="Fira Code SemiBold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="590.0" prefWidth="456.0" spacing="30.0">
+         <children>
+            <Label fx:id="txtWarning" text="Isi Semua Field!" textFill="RED">
+               <font>
+                  <Font name="Fira Code SemiBold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNama" promptText="Nama" styleClass="login" stylesheets="@../../../css/style.css">
+               <font>
+                  <Font name="Fira Code SemiBold" size="14.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="cbKategori" prefHeight="19.0" prefWidth="450.0" promptText="Kategori" />
+            <TextField fx:id="txtMerek" layoutX="10.0" layoutY="289.0" promptText="Merek" styleClass="login" stylesheets="@../../../css/style.css">
+               <font>
+                  <Font name="Fira Code SemiBold" size="14.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="cbWarna" layoutX="13.0" layoutY="147.0" prefHeight="19.0" prefWidth="450.0" promptText="Warna" />
+            <TextField fx:id="txtHarga" layoutX="10.0" layoutY="198.0" promptText="Harga" styleClass="login" stylesheets="@../../../css/style.css">
+               <font>
+                  <Font name="Fira Code SemiBold" size="14.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnTambah" mnemonicParsing="false" prefHeight="32.0" prefWidth="91.0" styleClass="login-btn" stylesheets="@../../../css/style.css" text="Edit" textFill="WHITE">
+               <font>
+                  <Font name="Fira Code SemiBold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</HBox>
