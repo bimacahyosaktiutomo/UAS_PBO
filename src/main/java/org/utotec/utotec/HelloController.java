@@ -89,7 +89,6 @@ public class HelloController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         instance = this;
-        pnKasir.setStyle("-fx-background-color: #4cbc27;");
         RefreshData();
 
         pnExit.setOnMouseClicked(mouseEvent -> Exit(mouseEvent));
@@ -111,6 +110,9 @@ public class HelloController implements Initializable {
 
         pnGudang.setOnMouseClicked(mouseEvent -> openGudang());
         pnKasir.setOnMouseClicked(mouseEvent -> openKasir());
+        pnKasir.setStyle("-fx-background-color: #4cbc27;");
+
+        btnBayar.setOnAction(actionEvent -> Bayar());
 
         CheckBox[] kategori = {chkCPU, chkGPU, chkRAM, chkMOBO, chkCASE, chkPSU};
         for (CheckBox checkBox : kategori){
@@ -183,6 +185,20 @@ public class HelloController implements Initializable {
            VboxMainContainer.getChildren().add(fxmlLoader.load());
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    private void Bayar() {
+        if (Integer.parseInt(txtKembali.getText()) >= 0 && !txtPembayaran.getText().isEmpty()){
+            Tools.AlertNotifINFORMATION("Payment", "Pembayaran Berhasil", "");
+
+            barangContainer.getChildren().clear();
+            resiList.clear();
+            HargaTotal.set(0);
+            HargaKembalian.set(0);
+            txtPembayaran.clear();
+        }else {
+            Tools.AlertNotifWARNING("Payment", "Pembayaran Gagal", "Saldo Kurang");
         }
     }
 
