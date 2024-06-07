@@ -166,7 +166,7 @@ public class GudangController implements Initializable {
     }
 
     private void HapusList() {
-        if (Tools.AlertNotifCONFIRM("Notifikasi", "Hapus data", "Apakah anda yakin ingin mengapus laptop berikut :  " + list)){
+        if (Tools.AlertNotifCONFIRM("Notifikasi", "Hapus data", "Apakah anda yakin ingin mengapus barang berikut :  " + list)){
             for (int id : list){
                 try {
                     ResultSet resultSet = connection.createStatement().executeQuery("SELECT gambar FROM barang WHERE id=" + id);
@@ -177,6 +177,12 @@ public class GudangController implements Initializable {
                     PreparedStatement statement = connection.prepareStatement("DELETE FROM barang WHERE id=?");
                     statement.setInt(1, id);
                     statement.executeUpdate();
+
+                    GudangController gudangController = new GudangController().getInstance();
+                    gudangController.getRefreshData();
+
+                    HelloController helloController = new HelloController().getInstance();
+                    helloController.getRefreshData();
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 } catch (IOException e) {

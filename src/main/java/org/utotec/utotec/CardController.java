@@ -125,17 +125,23 @@ public class CardController {
 
     private void Hapus(int id) {
         Connection connection = DB.connectDB();
-        if (Tools.AlertNotifCONFIRM("Notifikasi", "Hapus data", "Apakah anda yakin ingin mengapus laptop berikut : " + txtNama.getText() + " ?" )){
+        if (Tools.AlertNotifCONFIRM("Notifikasi", "Hapus data", "Apakah anda yakin ingin mengapus barang berikut : " + txtNama.getText() + " ?" )){
                 try {
 
-                    ResultSet resultSet = connection.createStatement().executeQuery("SELECT gambar FROM laptop WHERE id=" + id);
+                    ResultSet resultSet = connection.createStatement().executeQuery("SELECT gambar FROM barang WHERE id=" + id);
                     if (resultSet.next() && !resultSet.getString("gambar").isEmpty()){
                         Path path = Path.of(resultSet.getString("gambar")).toAbsolutePath();
                         Files.deleteIfExists(path);
                     }
-                    PreparedStatement statement = statement = connection.prepareStatement("DELETE FROM laptop WHERE id=?");
+                    PreparedStatement statement = statement = connection.prepareStatement("DELETE FROM barang WHERE id=?");
                     statement.setInt(1, id);
                     statement.executeUpdate();
+
+                    GudangController gudangController = new GudangController().getInstance();
+                    gudangController.getRefreshData();
+
+                    HelloController helloController = new HelloController().getInstance();
+                    helloController.getRefreshData();
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 } catch (IOException e) {

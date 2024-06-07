@@ -190,7 +190,7 @@ public class HelloController implements Initializable {
 
     private void Bayar() {
         if (Integer.parseInt(txtKembali.getText()) >= 0 && !txtPembayaran.getText().isEmpty()){
-            Tools.AlertNotifINFORMATION("Payment", "Pembayaran Berhasil", "");
+            Tools.AlertNotifINFORMATION("Payment", "Pembayaran Berhasil", "Kembalian : Rp." + txtKembali.getText());
 
             barangContainer.getChildren().clear();
             resiList.clear();

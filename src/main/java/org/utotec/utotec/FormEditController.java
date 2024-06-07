@@ -149,7 +149,7 @@ public class FormEditController implements Initializable {
                 statement.executeUpdate();
                 Files.deleteIfExists(Path.of(gambarLama));
 
-                Tools.AlertNotifINFORMATION("Informasi", "Tambah Laptop", "Berhasil Menambah Laptop");
+                Tools.AlertNotifINFORMATION("Informasi", "Edit Barang", "Data berhasil diubah");
                 Tools.CloseMeStage(actionEvent);
 
                 GudangController gudangController = new GudangController().getInstance();
