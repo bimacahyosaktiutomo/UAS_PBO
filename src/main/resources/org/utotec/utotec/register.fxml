@@ -6,65 +6,103 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="559.0" spacing="15.0" style="-fx-background-color: #FFDA78;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.utotec.utotec.RegisterController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="567.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.utotec.utotec.RegisterController">
    <children>
-      <Label text="Register">
-         <VBox.margin>
-            <Insets top="30.0" />
-         </VBox.margin>
-         <font>
-            <Font name="Fira Code SemiBold" size="20.0" />
-         </font>
-      </Label>
-      <Label fx:id="txtWarning" text="Username atau email sudah ada!" textFill="RED">
-         <font>
-            <Font name="Fira Code SemiBold" size="12.0" />
-         </font>
-      </Label>
-      <HBox alignment="CENTER" prefHeight="55.0" prefWidth="200.0">
+      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="350.0" spacing="15.0" style="-fx-background-color: white;">
          <children>
-            <TextField fx:id="txtUsernameRegis" prefHeight="38.0" prefWidth="404.0" promptText="Username" styleClass="login" stylesheets="@../../../css/style.css">
+            <Label text="Register">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
                <font>
-                  <Font name="Fira Code SemiBold" size="12.0" />
+                  <Font name="Fira Code SemiBold" size="20.0" />
                </font>
-            </TextField>
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="55.0" prefWidth="200.0">
-         <children>
-            <PasswordField fx:id="txtPasswordRegis" prefHeight="38.0" prefWidth="404.0" promptText="Password" styleClass="login" stylesheets="@../../../css/style.css">
-               <font>
-                  <Font name="Fira Code SemiBold" size="12.0" />
-               </font>
-            </PasswordField>
-         </children>
-      </HBox>
-      <HBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="223.0" prefHeight="55.0" prefWidth="200.0">
-         <children>
-            <Button fx:id="btnRegister" mnemonicParsing="false" onAction="#btnRegisterClicked" prefHeight="34.0" prefWidth="283.0" styleClass="login-btn" stylesheets="@../../../css/style.css" text="Register" textFill="WHITE">
-               <font>
-                  <Font name="Fira Code SemiBold" size="12.0" />
-               </font>
-            </Button>
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="27.0" prefWidth="559.0">
-         <children>
-            <Label alignment="TOP_CENTER" text="Sudah punya akun ?">
+            </Label>
+            <Label fx:id="txtWarning" text="Username atau email sudah ada!" textFill="RED">
                <font>
                   <Font name="Fira Code SemiBold" size="12.0" />
                </font>
             </Label>
-            <Hyperlink fx:id="hyperLogin" onAction="#HyperLoginClicked" text="Login" textFill="#2a629a">
-               <font>
-                  <Font name="Fira Code SemiBold" size="12.0" />
-               </font>
-            </Hyperlink>
+            <HBox alignment="CENTER" prefHeight="55.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="txtUsernameRegis" prefHeight="38.0" prefWidth="404.0" promptText="Username" styleClass="login" stylesheets="@../../../css/style.css">
+                     <font>
+                        <Font name="Fira Code SemiBold" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="55.0" prefWidth="200.0">
+               <children>
+                  <PasswordField fx:id="txtPasswordRegis" prefHeight="38.0" prefWidth="404.0" promptText="Password" styleClass="login" stylesheets="@../../../css/style.css">
+                     <font>
+                        <Font name="Fira Code SemiBold" size="12.0" />
+                     </font>
+                  </PasswordField>
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="223.0" prefHeight="55.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnRegister" mnemonicParsing="false" onAction="#btnRegisterClicked" prefHeight="34.0" prefWidth="283.0" styleClass="login-btn" stylesheets="@../../../css/style.css" text="Register" textFill="WHITE">
+                     <font>
+                        <Font name="Fira Code SemiBold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="27.0" prefWidth="559.0">
+               <children>
+                  <Label alignment="TOP_CENTER" text="Sudah punya akun ?">
+                     <font>
+                        <Font name="Fira Code SemiBold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink fx:id="hyperLogin" onAction="#HyperLoginClicked" text="Login" textFill="#2a629a">
+                     <font>
+                        <Font name="Fira Code SemiBold" size="12.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+            </HBox>
          </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #050C9C;" HBox.hgrow="ALWAYS">
+         <children>
+            <ImageView fitHeight="51.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/backspaceaqua.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Backspace" textFill="#ff8f00">
+                     <font>
+                        <Font name="Poppins Medium" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Computer" textFill="#b6fffa">
+                     <font>
+                        <Font name="Poppins Medium" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
       </HBox>
    </children>
-</VBox>
+</HBox>

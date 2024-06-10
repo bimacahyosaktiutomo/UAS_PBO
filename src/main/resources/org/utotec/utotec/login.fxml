@@ -6,18 +6,49 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="571.0" style="-fx-background-color: #FFDA78;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.utotec.utotec.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="571.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.utotec.utotec.LoginController">
     <center>
-        <VBox alignment="CENTER" prefHeight="490.0" prefWidth="862.0" style="-fx-background-color: #FFDA78;" BorderPane.alignment="TOP_LEFT">
+        <VBox alignment="CENTER" prefHeight="421.0" prefWidth="571.0" style="-fx-background-color: transparent;" BorderPane.alignment="TOP_LEFT">
          <children>
-            <HBox alignment="CENTER" prefHeight="382.0" prefWidth="946.0" style="-fx-background-color: transparent;">
+            <HBox alignment="CENTER" prefHeight="412.0" prefWidth="571.0" spacing="10.0" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
                <children>
-                  <VBox alignment="TOP_CENTER" prefHeight="405.0" prefWidth="559.0" style="-fx-background-color: #FFDA78;" styleClass="login" stylesheets="@../../../css/style.css">
+                  <HBox alignment="CENTER" fillHeight="false" prefHeight="382.0" prefWidth="505.0" style="-fx-background-color: #050C9C;">
+                     <children>
+                        <ImageView fitHeight="51.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/backspaceaqua.png" />
+                           </image>
+                        </ImageView>
+                        <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Backspace" textFill="#ff8f00">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Computer" textFill="#b6fffa">
+                                 <font>
+                                    <Font name="Poppins Medium" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </HBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="405.0" prefWidth="559.0" style="-fx-background-color: white;" styleClass="login" stylesheets="@../../../css/style.css">
                      <children>
                         <VBox alignment="CENTER" prefHeight="59.0" prefWidth="559.0" spacing="10.0">
                            <children>
@@ -82,8 +113,11 @@
                         </HBox>
                      </children>
                      <padding>
-                        <Insets top="10.0" />
+                        <Insets right="10.0" top="10.0" />
                      </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
                   </VBox>
                </children>
             </HBox>
